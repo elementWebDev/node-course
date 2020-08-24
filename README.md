@@ -27,7 +27,7 @@ fs.appendFileSync('notes.txt', ' This was appended to the file.')
 
 ## 10. Importing Your Own Files
 
-How do you access a variable from another file?
+How do you access a variable from another file? (files have their own scope)
 
 `module.exports = variableName`
 
