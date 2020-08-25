@@ -74,3 +74,5 @@ console.log(validator.isURL('https://example.com'))
 ```
 
 ## 12. Printing in Color
+
+If you have a **package.json** file and no **node_modules** folder, simply use `npm install` (no package name argument) to install those modules.
