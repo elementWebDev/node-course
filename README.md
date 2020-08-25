@@ -27,17 +27,11 @@ fs.appendFileSync('notes.txt', ' This was appended to the file.')
 
 ## 10. Importing Your Own Files
 
-How do you access a variable from another file?
+How do you access a variable from another file? (files have their own scope)
 
 `module.exports = variableName`
 
 ```js
-const getNotes = require('./notes.js')
-
-const msg = getNotes()
-
-console.log(msg)
-
 //
 // Challenge: Define and use a function in a new file
 //
@@ -45,8 +39,38 @@ console.log(msg)
 // 2. Create getNotes function that returns "Your notes..."
 // 3. Export getNotes function
 // 4. From app.js, load in and call the function printing message to console
-
-// const add = require('./utils.js')
-// const sum = add(4, -2)
-// console.log(sum)
 ```
+
+**app.js**
+
+```js
+const getNotes = require('./notes.js')
+
+const msg = getNotes()
+
+console.log(msg)
+```
+
+**notes.js**
+
+```js
+const getNotes = function () {
+  return 'Your notes...'
+}
+
+module.exports = getNotes
+```
+
+## 11. Importing npm Modules
+
+```javascript
+const validator = require('validator')
+const getNotes = require('./notes.js')
+
+const msg = getNotes()
+console.log(msg)
+
+console.log(validator.isURL('https://example.com'))
+```
+
+## 12. Printing in Color
