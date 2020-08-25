@@ -117,3 +117,6 @@ npm i nodemon@1.18.5 -g
 
 ### 14. Section Intro: File System and Command Line Args
 
+Now throughout this section the focus is going to be on two main topics.
+
+The first is the file system and the second our command line arguments the file system is going to allow us to store the user's note data and command line arguments are going to allow us to get input from the user.
