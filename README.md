@@ -8,7 +8,7 @@ Please note: **All npm packages with specific versions are used to follow along 
 
 ---
 
-## Section 3
+## Section 3: Node.js Module System (Notes App)
 
 ### 9. Importing Node.js Core Modules
 
@@ -112,3 +112,8 @@ To install globally use `-g` flag
 ```sh
 npm i nodemon@1.18.5 -g
 ```
+
+## Section 4: File System and Command Line Args (Notes App)
+
+### 14. Section Intro: File System and Command Line Args
+
