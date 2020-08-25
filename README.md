@@ -4,7 +4,13 @@ This is my code from the [The Complete Node.js Developer Course (3rd Edition)](h
 
 [Instructors Code on GitHub](https://github.com/andrewjmead/node-course-v3-code)
 
-## 9. Importing Node.js Core Modules
+Please note: **All npm packages with specific versions are used to follow along with the course.**
+
+---
+
+## Section 3
+
+### 9. Importing Node.js Core Modules
 
 ```js
 // load file system module, which needs to be stored in a variable
@@ -25,7 +31,7 @@ fs.writeFileSync('notes.txt', 'This message and file was created by Node.js')
 fs.appendFileSync('notes.txt', ' This was appended to the file.')
 ```
 
-## 10. Importing Your Own Files
+### 10. Importing Your Own Files
 
 How do you access a variable from another file? (files have their own scope)
 
@@ -61,7 +67,7 @@ const getNotes = function () {
 module.exports = getNotes
 ```
 
-## 11. Importing npm Modules
+### 11. Importing npm Modules
 
 ```js
 const validator = require('validator') // npm module import
@@ -73,6 +79,36 @@ console.log(msg)
 console.log(validator.isURL('https://example.com'))
 ```
 
-## 12. Printing in Color
+### 12. Printing in Color
 
 If you have a **package.json** file and no **node_modules** folder, simply use `npm install` (no package name argument) to install those modules.
+
+```js
+//
+// Challenge: Use the chalk library in your project
+//
+// 1. Install version 2.4.1 of chalk
+// 2. Load chalk into app.js
+// 3. Use it to print the string "Success!" to the console in green
+// 4. Test your work
+//
+// Bonus: Use docs to mess around with other styles. Make text bold and inversed.
+
+const chalk = require('chalk')
+const getNotes = require('./notes.js')
+
+const msg = getNotes()
+console.log(msg)
+
+console.log(chalk.green.bold.inverse('Success!'))
+```
+
+### 13. Global npm Modules and nodemon
+
+`nodemon` - monitors a file on save and automatically runs in the terminal
+
+To install globally use `-g` flag
+
+```sh
+npm i nodemon@1.18.5 -g
+```
