@@ -63,9 +63,9 @@ module.exports = getNotes
 
 ## 11. Importing npm Modules
 
-```javascript
-const validator = require('validator')
-const getNotes = require('./notes.js')
+```js
+const validator = require('validator') // npm module import
+const getNotes = require('./notes.js') // local file - requires relative path
 
 const msg = getNotes()
 console.log(msg)
