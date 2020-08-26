@@ -120,3 +120,56 @@ npm i nodemon@1.18.5 -g
 Now throughout this section the focus is going to be on two main topics.
 
 The first is the file system and the second our command line arguments the file system is going to allow us to store the user's note data and command line arguments are going to allow us to get input from the user.
+
+### 15. Getting Input from Users
+
+```js
+// argv - arguement vector
+console.log(process.argv[2])
+// dumps all arguments to terminal
+
+
+/*
+the first two are always present:
+1. executable path for node
+2. current file path
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  'Ivan'
+]
+*/
+```
+
+In the terminal we can use the third argument as a **command**:
+
+```powershell
+node app.js add
+```
+
+for example to add a user
+
+app.js
+
+```js
+const command = process.argv[2]
+
+console.log(process.argv)
+
+if (command === 'add') {
+  console.log('Adding note!')
+} else if (command === 'remove') {
+  console.log('Removing note!')
+}
+```
+
+```bash
+$ node app.js add --title="This is my title"
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  'add',
+  '--title=This is my title'
+]
+Adding note!
+```
