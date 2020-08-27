@@ -4,6 +4,8 @@ This is my code from the [The Complete Node.js Developer Course (3rd Edition)](h
 
 [Instructors Code on GitHub](https://github.com/andrewjmead/node-course-v3-code)
 
+[Node Course Guide (PDF)](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+
 Please note: **All npm packages with specific versions are used to follow along with the course.**
 
 ---
@@ -47,7 +49,7 @@ How do you access a variable from another file? (files have their own scope)
 // 4. From app.js, load in and call the function printing message to console
 ```
 
-**app.js**
+`app.js`
 
 ```js
 const getNotes = require('./notes.js')
@@ -57,7 +59,7 @@ const msg = getNotes()
 console.log(msg)
 ```
 
-**notes.js**
+`notes.js`
 
 ```js
 const getNotes = function () {
@@ -173,3 +175,10 @@ $ node app.js add --title="This is my title"
 ]
 Adding note!
 ```
+
+... See:
+
+local file:
+[A PDF Reference forThe Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+
+[A PDF Reference forThe Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
