@@ -14,7 +14,7 @@ const fs = require('fs')
 // console.log(data.title)
 
 const book = {
-    title: 'Bible',
+    title: 'Holy Bible',
     author: 'Heavenly Father'
 }
 
