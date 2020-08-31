@@ -253,15 +253,15 @@ console.log(data.title)
 ![editor state](/img/editor-state-1.png)
 Now we can work with data from a JSON object
 
-
+<!-- left off: 11:29 -->
 
 ...
 
 See:
 
 local file:
-[A PDF Reference forThe Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+[A PDF Reference for The Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
 
-[A PDF Reference forThe Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
+[A PDF Reference for The Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
 
 
