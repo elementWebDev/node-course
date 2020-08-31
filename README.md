@@ -70,7 +70,167 @@ const getNotes = require('./notes.js')
 const msg = getNotes()
 console.log(msg)
 
+<<<<<<< Updated upstream
 console.log(validator.isURL('https://example.com'))
 ```
 
 ## 12. Printing in Color
+=======
+console.log(chalk.green.bold.inverse('Success!'))
+```
+
+### 13. Global npm Modules and nodemon
+
+`nodemon` - monitors a file on save and automatically runs in the terminal
+
+To install globally use `-g` flag
+
+```sh
+npm i nodemon@1.18.5 -g
+```
+
+## Section 4: File System and Command Line Args (Notes App)
+
+### 14. Section Intro: File System and Command Line Args 1
+
+Now throughout this section the focus is going to be on two main topics.
+
+The first is the file system and the second our command line arguments the file system is going to allow us to store the user's note data and command line arguments are going to allow us to get input from the user.
+
+### 15. Getting Input from Users
+
+```js
+// argv - arguement vector
+console.log(process.argv[2])
+// dumps all arguments to terminal
+
+
+/*
+the first two are always present:
+1. executable path for node
+2. current file path
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  'Ivan'
+]
+*/
+```
+
+In the terminal we can use the third argument as a **command**:
+
+```powershell
+node app.js add
+```
+
+for example to add a user
+
+app.js
+
+```js
+const command = process.argv[2]
+
+console.log(process.argv)
+
+if (command === 'add') {
+  console.log('Adding note!')
+} else if (command === 'remove') {
+  console.log('Removing note!')
+}
+```
+
+```bash
+$ node app.js add --title="This is my title"
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  'add',
+  '--title=This is my title'
+]
+Adding note!
+```
+
+---
+
+### 18. Storing Data with JSON
+
+In this lesson, you’ll learn how to work with JSON. **JSON**, which stands for **JavaScript Object Notation**, is a lightweight data format. JSON makes it easy to store or transfer data. You’ll be using it in this application to store users notes in the file system.
+
+#### Working with JSON
+
+Since JSON is nothing more than a string, it can be used to store data in a text file or transfer data via an HTTP requests between two machines.
+
+JavaScript provides two methods for working with JSON. The first is `JSON.stringify` and the second is `JSON.parse`.
+
+`JSON.stringify` converts a JavaScript object into a JSON string, while `JSON.parse` converts a JSON string into a JavaScript object.
+
+```javascript
+constbook = {title:'Holy Bible', author:'Heavenly Father'}
+
+// Covert JavaScript object into JSON string
+constbookJSON =JSON.stringify(book)
+
+// Covert JSON string into object
+const bookObject = JSON.parse(bookJSON)
+console.log(bookObject.title) // Print: Ego is the Enemy
+```
+
+JSON looks similar to a JavaScript object, but there are some differences. The most obvious is that all properties are wrapped in double-quotes. Single-quotes can’t be used here, as JSON only supports double-quotes. You can see this in the example JSON below.
+
+`{"name":"Gunther","planet":"Earth","age":54}`
+
+```javascript
+const fs = require('fs')
+const book = {
+    title: 'Bible',
+    author: 'Heavenly Father'
+}
+
+// Convert object to JSON which requires string
+const bookJSON = JSON.stringify(book)
+console.log(bookJSON)
+
+// Convert JSON string back to object,
+// which allows us to access the object properties
+const parsedData = JSON.parse(bookJSON)
+console.log(parsedData.author)
+```
+
+```javascript
+const fs = require('fs')
+// const book = {
+//     title: 'Bible',
+//     author: 'Heavenly Father'
+// }
+
+// const bookJSON = JSON.stringify(book)
+// fs.writeFileSync('1-json.json', bookJSON)
+
+const dataBuffer = fs.readFileSync('1-json.json')
+console.log(dataBuffer) // output: <Buffer 7b 22 74 69 74 6c 65 22 3a 22 42 69 62 6c 65 22 2c 22 61 75 74 68 6f 72 22 3a 22 48 65 61 76 65 6e 6c 79 20 46 61 74 68 65 72 22 7d>
+```
+
+```javascript
+// read file
+const dataBuffer = fs.readFileSync('1-json.json')
+// convert data to string
+const dataJSON = dataBuffer.toString()
+// parse data into object
+const data = JSON.parse(dataJSON)
+// accessed property
+console.log(data.title)
+```
+![editor state](/img/editor-state-1.png)
+Now we can work with data from a JSON object
+
+
+...
+
+See:
+
+local file:
+[A PDF Reference forThe Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+
+[A PDF Reference forThe Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
+
+>>>>>>> Stashed changes
