@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 // const book = {
-//     title: 'Bible',
+//     title: 'Holy Bible',
 //     author: 'Heavenly Father'
 // }
 
