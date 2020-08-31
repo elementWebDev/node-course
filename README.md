@@ -117,7 +117,7 @@ npm i nodemon@1.18.5 -g
 
 ## Section 4: File System and Command Line Args (Notes App)
 
-### 14. Section Intro: File System and Command Line Args
+### 14. Section Intro: File System and Command Line Args 1
 
 Now throughout this section the focus is going to be on two main topics.
 
@@ -176,9 +176,32 @@ $ node app.js add --title="This is my title"
 Adding note!
 ```
 
-... See:
+---
+
+### 18. Storing Data with JSON
+
+```javascript
+const fs = require('fs')
+const book = {
+    title: 'Bible',
+    author: 'Heavenly Father'
+}
+
+// Convert object to JSON which requires string
+const bookJSON = JSON.stringify(book)
+console.log(bookJSON)
+
+// Convert JSON string back to object
+const parsedData = JSON.parse(bookJSON)
+console.log(parsedData.author)
+```
+
+...
+
+See:
 
 local file:
 [A PDF Reference forThe Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
 
 [A PDF Reference forThe Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
+
