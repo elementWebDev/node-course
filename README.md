@@ -4,7 +4,15 @@ This is my code from the [The Complete Node.js Developer Course (3rd Edition)](h
 
 [Instructors Code on GitHub](https://github.com/andrewjmead/node-course-v3-code)
 
-## 9. Importing Node.js Core Modules
+[Node Course Guide (PDF)](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+
+Please note: **All npm packages with specific versions are used to follow along with the course.**
+
+---
+
+## Section 3: Node.js Module System (Notes App)
+
+### 9. Importing Node.js Core Modules
 
 ```js
 // load file system module, which needs to be stored in a variable
@@ -25,7 +33,7 @@ fs.writeFileSync('notes.txt', 'This message and file was created by Node.js')
 fs.appendFileSync('notes.txt', ' This was appended to the file.')
 ```
 
-## 10. Importing Your Own Files
+### 10. Importing Your Own Files
 
 How do you access a variable from another file? (files have their own scope)
 
@@ -41,7 +49,7 @@ How do you access a variable from another file? (files have their own scope)
 // 4. From app.js, load in and call the function printing message to console
 ```
 
-**app.js**
+`app.js`
 
 ```js
 const getNotes = require('./notes.js')
@@ -51,7 +59,7 @@ const msg = getNotes()
 console.log(msg)
 ```
 
-**notes.js**
+`notes.js`
 
 ```js
 const getNotes = function () {
@@ -61,21 +69,41 @@ const getNotes = function () {
 module.exports = getNotes
 ```
 
-## 11. Importing npm Modules
+### 11. Importing npm Modules
 
-```javascript
-const validator = require('validator')
+```js
+const validator = require('validator') // npm module import
+const getNotes = require('./notes.js') // local file - requires relative path
+
+const msg = getNotes()
+console.log(msg)
+
+
+console.log(validator.isURL('https://example.com'))
+```
+
+### 12. Printing in Color
+
+If you have a **package.json** file and no **node_modules** folder, simply use `npm install` (no package name argument) to install those modules.
+
+```js
+//
+// Challenge: Use the chalk library in your project
+//
+// 1. Install version 2.4.1 of chalk
+// 2. Load chalk into app.js
+// 3. Use it to print the string "Success!" to the console in green
+// 4. Test your work
+//
+// Bonus: Use docs to mess around with other styles. Make text bold and inversed.
+
+const chalk = require('chalk')
 const getNotes = require('./notes.js')
 
 const msg = getNotes()
 console.log(msg)
 
-<<<<<<< Updated upstream
-console.log(validator.isURL('https://example.com'))
-```
 
-## 12. Printing in Color
-=======
 console.log(chalk.green.bold.inverse('Success!'))
 ```
 
@@ -190,8 +218,10 @@ const book = {
 const bookJSON = JSON.stringify(book)
 console.log(bookJSON)
 
+
 // Convert JSON string back to object,
 // which allows us to access the object properties
+
 const parsedData = JSON.parse(bookJSON)
 console.log(parsedData.author)
 ```
@@ -224,6 +254,7 @@ console.log(data.title)
 Now we can work with data from a JSON object
 
 
+
 ...
 
 See:
@@ -233,4 +264,4 @@ local file:
 
 [A PDF Reference forThe Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
 
->>>>>>> Stashed changes
+
