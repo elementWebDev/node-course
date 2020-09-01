@@ -193,10 +193,10 @@ JavaScript provides two methods for working with JSON. The first is `JSON.string
 `JSON.stringify` converts a JavaScript object into a JSON string, while `JSON.parse` converts a JSON string into a JavaScript object.
 
 ```javascript
-constbook = {title:'Holy Bible', author:'Heavenly Father'}
+const book = {title:'Holy Bible', author:'Heavenly Father'}
 
 // Covert JavaScript object into JSON string
-constbookJSON =JSON.stringify(book)
+const bookJSON =JSON.stringify(book)
 
 // Covert JSON string into object
 const bookObject = JSON.parse(bookJSON)
@@ -239,6 +239,8 @@ const fs = require('fs')
 const dataBuffer = fs.readFileSync('1-json.json')
 console.log(dataBuffer) // output: <Buffer 7b 22 74 69 74 6c 65 22 3a 22 42 69 62 6c 65 22 2c 22 61 75 74 68 6f 72 22 3a 22 48 65 61 76 65 6e 6c 79 20 46 61 74 68 65 72 22 7d>
 ```
+
+add .toString() method in order to get file contents --v
 
 ```javascript
 // read file
