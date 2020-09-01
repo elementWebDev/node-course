@@ -12,19 +12,16 @@ const fs = require('fs')
 // const data = JSON.parse(dataJSON)
 // console.log(data.title)
 
-// 1.
+
 const dataBuffer = fs.readFileSync('1-json.json')
 const dataJSON = dataBuffer.toString()
-const data = JSON.parse(dataJSON)
-console.log(data)
-// 2.
-data.name = 'Ivan'
-data.age = 40
-console.log(data)
-// 3.
-const changed = JSON.stringify(data)
-console.log(changed)
-fs.writeFileSync('1-json.json', changed)
+const user = JSON.parse(dataJSON)
+
+user.name = 'Ivan'
+user.age = 40
+
+const userJSON = JSON.stringify(user)
+fs.writeFileSync('1-json.json', userJSON)
 
 //
 // Challenge: Work with JSON and the file system
