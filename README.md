@@ -4,6 +4,8 @@ This is my code from the [The Complete Node.js Developer Course (3rd Edition)](h
 
 [Instructors Code on GitHub](https://github.com/andrewjmead/node-course-v3-code)
 
+[A PDF Reference for The Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
+
 [Node Course Guide (PDF)](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
 
 Please note: **All npm packages with specific versions are used to follow along with the course.**
@@ -291,14 +293,121 @@ fs.writeFileSync('1-json.json', userJSON)
 // 2. Change the name and age property using your info
 // 3. Stringify the changed object and overwrite the original data
 // 4. Test your work by viewing the data in the JSON file
-
 ```
 
-...
+---
 
-See:
+### 19. Adding a Note
 
-local file:
-[A PDF Reference for The Complete Node.js Dev Course v3.0](file:///C:/Users/ewDev/Documents/udemy/The%20Complete%20Node.js%20Developer%20Course/PDF-Guide-Node-Andrew-Mead-v3.pdf)
+app.js
 
-[A PDF Reference for The Complete Node.js Dev Course v3.0](https://github.com/elementWebDev/node-course/blob/master/Node-Course-v3.pdf)
+```javascript
+// Create add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string' // default is boolean
+        },
+        body: {
+            describe: 'Body text',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        notes.addNote(argv.title, argv.body)
+    }
+})
+```
+
+notes.js
+
+```javascript
+const addNote = function (title, body) {
+    const notes = loadNotes()
+    const duplicateNotes = notes.filter(function (note) {
+        return note.title === title
+    })
+
+    if (duplicateNotes.length === 0) {
+        notes.push({
+            title: title,
+            body: body
+        })
+        saveNotes(notes)
+        console.log('New note added!')
+    } else {
+        console.log('Note title taken!')
+    }
+}
+
+const saveNotes = function (notes) {
+    const dataJSON = JSON.stringify(notes)
+    fs.writeFileSync('notes.json', dataJSON)
+}
+```
+
+```bash
+dev node-course/notes-app (master)
+$ node app.js add --title="List" --body="Sweater, Pants"
+Note title taken!
+
+dev node-course/notes-app (master)
+$ node app.js add --title="List 2" --body="Sweater, Pants"
+New note added!
+```
+
+---
+
+### 20. Removing a Note - part 1
+
+```javascript
+//
+// Challenge: Setup command option and function
+//
+// 1. Setup the remove command to take a required "--title" option
+// 2. Create and export a removeNote function from notes.js
+// 3. Call removeNote in command handler
+// 4. Have removeNote log the title of the note to be removed
+// 5. Test your work using: node app.js remove --title="some title"
+```
+
+app.js
+
+```javascript
+// Create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        notes.removeNote(argv.title)
+    }
+})
+```
+
+notes.js
+
+```javascript
+// Remove Note
+const removeNote = function (title) {
+    console.log(title)
+}
+
+// Export variables to be used in other files
+module.exports = {
+    getNotes: getNotes,
+    addNote: addNote,
+    removeNote: removeNote
+}
+```
