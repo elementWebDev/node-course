@@ -24,10 +24,14 @@ const addNote = function (title, body) {
 }
 
 // Remove Note
-const removeNote = function (title) {
-    console.log(title)
+const removeNote = function (title, body) {
+    // console.log(title)
+    const notes = loadNotes()
+    const notesToKeep = notes.filter(function (note) {
+        return note.title !== title
+    })
+    saveNotes(notesToKeep)
 }
-
 // Save notes to file
 const saveNotes = function (notes) {
     const dataJSON = JSON.stringify(notes)

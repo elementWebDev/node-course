@@ -411,3 +411,29 @@ module.exports = {
     removeNote: removeNote
 }
 ```
+
+### 20. Removing a Note - part 2
+
+```javascript
+//
+// Challenge: Wire up removeNote
+//
+// 1. Load existing notes
+// 2. Use array filter method to remove the matching note (if any)
+// 3. Save the newly created array
+// 4. Test your work with a title that exists, and a title that doesn't exist
+```
+
+notes.js
+
+```javascript
+// Remove Note
+const removeNote = function (title, body) {
+    // console.log(title)
+    const notes = loadNotes()
+    const notesToKeep = notes.filter(function (note) {
+        return note.title !== title
+    })
+    saveNotes(notesToKeep)
+}
+```
