@@ -448,4 +448,34 @@ node app.js remove --title="t" # does not remove since note was previously remov
 
 ### 20. Removing a Note - part 3
 
+notes.js:
+
+```javascript
+// Remove Note
+const removeNote = function (title) {
+    const notes = loadNotes()
+    const notesToKeep = notes.filter(function (note) {
+        return note.title !== title
+    })
+
+    if (notes.length > notesToKeep.length) {
+        console.log(chalk.green.inverse('Note removed!'))
+        saveNotes(notesToKeep)
+    } else {
+        console.log(chalk.red.inverse('No note found!'))
+    }
+}
+```
+
+terminal:
+
+![results](img/20-bash.png)
+
+```bash
+node app.js remove --title="t"
+No note found!
+
+node app.js remove --title="third"
+Note removed!
+```
 
