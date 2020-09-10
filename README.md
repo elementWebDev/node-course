@@ -437,3 +437,15 @@ const removeNote = function (title, body) {
     saveNotes(notesToKeep)
 }
 ```
+
+Test your work with a title that exists, and a title that doesn't exist
+
+```bash
+node app.js remove --title="t" # removes existing note
+
+node app.js remove --title="t" # does not remove since note was previously removed
+```
+
+### 20. Removing a Note - part 3
+
+
