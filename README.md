@@ -479,3 +479,50 @@ node app.js remove --title="third"
 Note removed!
 ```
 
+### 21. ES6 Aside - Arrow Functions
+
+![video](video\Section 4 - File System and Command Line Args\21 ES6 Aside-Arrow-Functions.mp4)
+
+example
+
+```javascript
+const square = function (x) {
+    return x * x
+}
+// arrow function
+const square = (x) => {
+    return x * x
+}
+```
+
+shorthand syntax for a single statement only
+
+```javascript
+const square = (x) => x * x
+
+console.log(square(2)) // prints 4
+```
+
+Arrow functions do not have access to `this`
+
+```javascript
+const event = {
+    name: 'Birthday Party',
+    printGuestList: function () {
+        console.log('Guest list for ' + this.name)
+    }
+}
+```
+
+ES6 Alternative for setting **methods on objects** - with access to `this`
+
+```javascript
+es6 shorthand with access to `this`
+const event = {
+    name: 'Birthday Party',
+    printGuestList() {
+        console.log('Guest list for ' + this.name)
+    }
+}
+event.printGuestList()
+```
