@@ -481,9 +481,9 @@ Note removed!
 
 ### 21. ES6 Aside - Arrow Functions
 
-![video](video\Section 4 - File System and Command Line Args\21 ES6 Aside-Arrow-Functions.mp4)
+C:\Users\ewDev\Documents\udemy\node-course\video\Section 4 - (File System and Command Line Args\21 ES6 Aside-Arrow-Functions.mp4
 
-example
+example 1
 
 ```javascript
 const square = function (x) {
@@ -526,3 +526,13 @@ const event = {
 }
 event.printGuestList()
 ```
+
+#### Three key takeaways
+
+1. alternative syntax (comparing - example 1)
+2. shorthand syntax
+3. arrow functions don't bind their own `this` value (making them poor candidates for methods but great for pretty much everything else)
+
+**ES6 syntax will be used in remainder of course**
+
+### 22.
