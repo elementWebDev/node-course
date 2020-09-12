@@ -141,7 +141,7 @@ the first two are always present:
 2. current file path
 [
   'C:\\Program Files\\nodejs\\node.exe',
-  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  '\\node-course\\notes-app\\app.js',
   'Ivan'
 ]
 */
@@ -173,7 +173,7 @@ if (command === 'add') {
 $ node app.js add --title="This is my title"
 [
   'C:\\Program Files\\nodejs\\node.exe',
-  'C:\\Users\\ewDev\\Documents\\udemy\\node-course\\notes-app\\app.js',
+  '\\node-course\\notes-app\\app.js',
   'add',
   '--title=This is my title'
 ]
@@ -479,9 +479,11 @@ node app.js remove --title="third"
 Note removed!
 ```
 
+---
+
 ### 21. ES6 Aside - Arrow Functions
 
-C:\Users\ewDev\Documents\udemy\node-course\video\Section 4 - (File System and Command Line Args\21 ES6 Aside-Arrow-Functions.mp4
+\node-course\video\Section 4 - (File System and Command Line Args\21 ES6 Aside-Arrow-Functions.mp4
 
 example 1
 
@@ -517,7 +519,7 @@ const event = {
 ES6 Alternative for setting **methods on objects** - with access to `this`
 
 ```javascript
-es6 shorthand with access to `this`
+// es6 shorthand with access to `this`
 const event = {
     name: 'Birthday Party',
     printGuestList() {
@@ -533,6 +535,8 @@ event.printGuestList()
 2. shorthand syntax
 3. arrow functions don't bind their own `this` value (making them poor candidates for methods but great for pretty much everything else)
 
-**ES6 syntax will be used in remainder of course**
+#### ES6 syntax will be used in remainder of course
 
-### 22.
+---
+
+### 22. Refactoring to Use Arrow Function
