@@ -491,6 +491,7 @@ example 1
 const square = function (x) {
     return x * x
 }
+
 // arrow function
 const square = (x) => {
     return x * x
@@ -540,3 +541,37 @@ event.printGuestList()
 ---
 
 ### 22. Refactoring to Use Arrow Function
+
+#### Challenge - Create method to get incomplete tasks
+
+```javascript
+// 1. Define getTasksToDo method
+// 2. Use filter to to return just the incompleted tasks (arrow function)
+// 3. Test your work by running the script
+
+const tasks = {
+    tasks: [{
+        text: 'Grocery shopping',
+        completed: true
+    },{
+        text: 'Clean yard',
+        completed: false
+    }, {
+        text: 'Film course',
+        completed: false
+    }],
+    // getTasksToDo() {
+    //     const toDo = this.tasks.filter((task) => {
+    //         return task.completed === false
+    //     })
+    //     return toDo
+    // }
+
+    // refactored
+    getTasksToDo() {
+        return this.tasks.filter((task) => task.completed === false)
+    }
+}
+
+console.log(tasks.getTasksToDo())
+```

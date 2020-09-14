@@ -31,7 +31,8 @@
 const event = {
     name: 'Birthday Party',
     guestList: ['Ivan', 'Sara', 'Novella'],
-    // alternative to arrow function (method definition syntax)
+
+     // alternative to arrow function (method definition syntax)
     printGuestList() {
         console.log('Guest list for ' + this.name)
 
