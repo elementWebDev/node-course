@@ -3,11 +3,10 @@ const yargs = require('yargs')
 const notes = require('./notes.js')
 
 //
-// Goal: Refactor all functions (both app.js & notes.js)
+// Challenge: Use chalk to provide useful logs for remove
 //
-// 1. If function is a method, use ES6 method definition syntax
-// 2. Otherwise, use most concise arrow function possible
-// 3. Test your work!
+// 1. If a note is removed, print "Note removed!" with a green background
+// 2. If no note is removed, print "No note found!" with a red background
 
 // Customize yargs
 yargs.version('1.1.0')
