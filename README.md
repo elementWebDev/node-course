@@ -575,3 +575,5 @@ const tasks = {
 
 console.log(tasks.getTasksToDo())
 ```
+
+6c7052b Refactored **app.js** and **notes.js**
