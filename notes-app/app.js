@@ -3,10 +3,13 @@ const yargs = require('yargs')
 const notes = require('./notes.js')
 
 //
-// Challenge: Use chalk to provide useful logs for remove
+// Goal: Wire up list command
 //
-// 1. If a note is removed, print "Note removed!" with a green background
-// 2. If no note is removed, print "No note found!" with a red background
+// 1. Create and export list from notes.js
+//  - "Your notes" using chalk
+//  - Print note title for each note
+// 2. Call listNotes from command handler
+// 3. Test your work!
 
 // Customize yargs
 yargs.version('1.1.0')
