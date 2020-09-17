@@ -577,3 +577,23 @@ console.log(tasks.getTasksToDo())
 ```
 
 [6c7052b](elementWebDev@6c7052b) Refactored **app.js** and **notes.js**
+
+---
+
+## Section 5: Debugging Node.js (Notes Apps)
+
+See videos:
+
+[25. Section Intro- Debugging Node.mp4](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728898#content)
+
+[26. Debugging Node.js](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728902#content)
+
+[27. Error Messages](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728904#content)
+
+See Also:
+
+[PDF Guide](Node-Course-v3.pdf)
+
+---
+## Section 6: Asynchronous Node.js (Weather App)
+
