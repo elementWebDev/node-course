@@ -595,5 +595,25 @@ See Also:
 [PDF Guide](Node-Course-v3.pdf)
 
 ---
+
 ## Section 6: Asynchronous Node.js (Weather App)
 
+![async](img/async-1.png)(https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
+
+[30. Call Stack, Callback Queue, and Event Loop](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
+
+Async example:
+
+```nodejs
+console.log('Starting up')
+
+setTimeout(() => {
+    console.log('2 Second Timer')
+}, 2000)
+
+setTimeout(() => {
+    console.log('0 Second Timer')
+}, 0)
+
+console.log('Finishing up')
+```
