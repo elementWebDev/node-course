@@ -4,11 +4,27 @@ const url = 'http://api.weatherstack.com/current?access_key=e2e260996b1cb4ae50ac
 
 request({ url: url, json: true }, (error, response) => {
     // console.log(response.body.current);
-    console.log(response.body.current.weather_descriptions[0] + '. It is currently ' + response.body.current.temperature + ' degrees. It feels like ' + response.body.current.feelslike + ' degrees.');
+    console.log(response.body.current.weather_descriptions[0] +
+        '. It is currently ' + response.body.current.temperature +
+        ' degrees. It feels like ' + response.body.current.feelslike + ' degrees.');
 })
 
+// Geocoding
+// Address -> Lat/Long -> Weather
+
+// 33. An HTTP Request Challenge
+// Goal: Print the lat/long for Los Angeles
 //
-// Goal: Print a small forecast to the user
-//
-// 1. Print: "It is currently 9 degrees out. It feels like 5 degrees out."
-// 2. Test your work!
+// 1. Fire off a new request to the URL explored in browser
+// 2. Have the request module parse it as JSON
+// 3. Print both the latitude and longitude to the terminal
+// 4. Test your work!
+
+const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZWxlbWVudHdlYmRldiIsImEiOiJja2Y4bzFwemcwZTkyMnlvdG12a2RyZXZtIn0.rw_54GGCAxlnhDZ2IA6QKA&limit=1'
+
+request({ url: geoUrl, json: true }, (error, response) => {
+    console.log('latitude: ' + response.body.features[0].center[1] + ' longitude: ' + response.body.features[0].center[0])
+})
+
+
+
