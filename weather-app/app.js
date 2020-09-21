@@ -12,19 +12,8 @@ request({ url: url, json: true }, (error, response) => {
 // Geocoding
 // Address -> Lat/Long -> Weather
 
-// 33. An HTTP Request Challenge
-// Goal: Print the lat/long for Los Angeles
-//
-// 1. Fire off a new request to the URL explored in browser
-// 2. Have the request module parse it as JSON
-// 3. Print both the latitude and longitude to the terminal
-// 4. Test your work!
-
 const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZWxlbWVudHdlYmRldiIsImEiOiJja2Y4bzFwemcwZTkyMnlvdG12a2RyZXZtIn0.rw_54GGCAxlnhDZ2IA6QKA&limit=1'
 
 request({ url: geoUrl, json: true }, (error, response) => {
     console.log('latitude: ' + response.body.features[0].center[1] + ' longitude: ' + response.body.features[0].center[0])
 })
-
-
-
