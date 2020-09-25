@@ -598,7 +598,8 @@ See Also:
 
 ## Section 6: Asynchronous Node.js (Weather App)
 
-![async](img/async-1.png)(https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
+![async](img/async-1.png)
+[video](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
 
 [30. Call Stack, Callback Queue, and Event Loop](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
 
@@ -617,3 +618,32 @@ setTimeout(() => {
 
 console.log('Finishing up')
 ```
+
+### 35. Callback Functions
+
+**A callback function is a function we provide as an argument to another function, with the intention of having it called later.**
+
+A callback function is a function that’s passed as an argument to another function. That’s it. This is something you’ve used before, and in this lesson, you’ll dive a bit deeper into how they work.
+
+#### The Callback Function
+
+A callback function is a function that’s passed as an argument to another function. Imagine you have FunctionA which gets passed as an argument to FunctionB. FunctionB will do some work and then call FunctionA at some point in the future.
+
+Callback functions are at the core of asynchronous development. When you perform an asynchronous operation,you’ll provide Node with a callback function. Node will then call the callback when the async operation is complete. This is how you get access to the results of the async operation, whether it’s an HTTP request for JSON data or a query to a database for a user’s profile.The example below shows how you can use the callback pattern in your own code. The geocodefunction is set up to take in two arguments. The first is the address to geocode. The second is the callback function to run when the geocoding process is complete. The example below simulates this request by using `setTimeout` to make the process asynchronous.
+
+```nodejs
+const geocode = (address,callback) => {
+    setTimeout(() => {
+        constdata = {
+            latitude:0,
+            longitude:0
+        }
+        callback(data)
+    }, 2000)
+}
+geocode('Philadelphia', (data) => {
+    console.log(data)
+})
+```
+
+The call to geocodeprovides both arguments, the address and the callback function. Notice that the callback function is expecting a single parameter which it has called `data`. This is where the callback function will get access to the results of the asynchronous operation. You can see where `callback` is called with the data inside the `geocode` function

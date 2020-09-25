@@ -16,15 +16,6 @@ const request = require('request')
 //     }
 // })
 
-
-//
-// Goal: Handle errors for geocoding request
-//
-// 1. Setup an error handler for low-level errors
-// 2. Test by disabling network request and running the app
-// 3. Setup error handling for no matching results
-// 4. Test by altering the search term and running the app
-
 const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZWxlbWVudHdlYmRldiIsImEiOiJja2Y4bzFwemcwZTkyMnlvdG12a2RyZXZtIn0.rw_54GGCAxlnhDZ2IA6QKA&limit=1'
 
 request({ url: geoUrl, json: true }, (error, response) => {
