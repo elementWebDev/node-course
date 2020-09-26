@@ -1,4 +1,5 @@
 const request = require('request')
+const geocode = require('./utils/geocode')
 
 // const url = 'http://api.weatherstack.com/current?access_key=e2e260996b1cb4ae50acbcf5faca050b&query=37.8267,-122.4233&units=f'
 
@@ -16,17 +17,25 @@ const request = require('request')
 //     }
 // })
 
-const geoUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZWxlbWVudHdlYmRldiIsImEiOiJja2Y4bzFwemcwZTkyMnlvdG12a2RyZXZtIn0.rw_54GGCAxlnhDZ2IA6QKA&limit=1'
 
-request({ url: geoUrl, json: true }, (error, response) => {
-    if (error) {
-        console.log('Unable to connect to location services')
-    } else if (response.body.features.length === 0) {
-        console.log('No matching results, please try another search.')
+// const geocodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZWxlbWVudHdlYmRldiIsImEiOiJja2Y4bzFwemcwZTkyMnlvdG12a2RyZXZtIn0.rw_54GGCAxlnhDZ2IA6QKA&limit=1'
 
-    } else {
-        const latitude = response.body.features[0].center[1]
-        const longitude = response.body.features[0].center[0]
-        console.log(latitude + ', ' + longitude)
-    }
+// request({ url: geocodeUrl, json: true }, (error, response) => {
+//     if (error) {
+//         console.log('Unable to connect to location services')
+//     } else if (response.body.features.length === 0) {
+//         console.log('No matching results, please try another search.')
+
+//     } else {
+//         const latitude = response.body.features[0].center[1]
+//         const longitude = response.body.features[0].center[0]
+//         console.log(latitude + ', ' + longitude)
+//     }
+// })
+
+
+
+geocode('Eugene Oregon', (error, data) => {
+    console.log('Error:', error)
+    console.log('Data:', data)
 })
