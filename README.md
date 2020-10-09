@@ -184,7 +184,9 @@ Adding note!
 
 ### 18. Storing Data with JSON
 
-In this lesson, you’ll learn how to work with JSON. **JSON**, which stands for **JavaScript Object Notation**, is a lightweight data format. JSON makes it easy to store or transfer data. You’ll be using it in this application to store users notes in the file system.
+In this lesson, you’ll learn how to work with JSON.
+
+**JSON**, which stands for **JavaScript Object Notation**, is a lightweight data format. JSON makes it easy to store or transfer data. You’ll be using it in this application to store users notes in the file system.
 
 #### Working with JSON
 
@@ -198,14 +200,16 @@ JavaScript provides two methods for working with JSON. The first is `JSON.string
 const book = {title:'Holy Bible', author:'Heavenly Father'}
 
 // Covert JavaScript object into JSON string
-const bookJSON =JSON.stringify(book)
+const bookJSON = JSON.stringify(book)
 
 // Covert JSON string into object
 const bookObject = JSON.parse(bookJSON)
-console.log(bookObject.title) // Print: Ego is the Enemy
+console.log(bookObject.title) // Print: Holy Bible
 ```
 
-JSON looks similar to a JavaScript object, but there are some differences. The most obvious is that all properties are wrapped in double-quotes. Single-quotes can’t be used here, as JSON only supports double-quotes. You can see this in the example JSON below.
+JSON looks similar to a JavaScript object, but there are some differences.
+
+The most obvious is that all properties are wrapped in double-quotes. Single-quotes can’t be used here, as JSON only supports double-quotes. You can see this in the example JSON below.
 
 `{"name":"Gunther","planet":"Earth","age":54}`
 
@@ -646,4 +650,4 @@ geocode('Philadelphia', (data) => {
 })
 ```
 
-The call to geocodeprovides both arguments, the address and the callback function. Notice that the callback function is expecting a single parameter which it has called `data`. This is where the callback function will get access to the results of the asynchronous operation. You can see where `callback` is called with the data inside the `geocode` function
+The call to geocode provides both arguments, the address and the callback function. Notice that the callback function is expecting a single parameter which it has called `data`. This is where the callback function will get access to the results of the asynchronous operation. You can see where `callback` is called with the data inside the `geocode` function
