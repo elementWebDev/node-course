@@ -1,5 +1,7 @@
 # Node Course
 
+<!-- vids: Documents\udemy\The Complete Node.js Developer Course\section_4 -->
+
 This is my code from the [The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
 
 [Instructors Code on GitHub](https://github.com/andrewjmead/node-course-v3-code)
@@ -607,6 +609,16 @@ See Also:
 
 [30. Call Stack, Callback Queue, and Event Loop](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13728912)
 
+`setTimout` requires 2 arguments: a function and a delay in milliseconds.
+
+```nodejs
+setTimeout(() => {
+    // do something
+}, 2000)
+```
+
+<!-- please note setTimeout simulates a delay -->
+
 Async example:
 
 ```nodejs
@@ -631,9 +643,13 @@ A callback function is a function that’s passed as an argument to another func
 
 #### The Callback Function
 
-A callback function is a function that’s passed as an argument to another function. Imagine you have FunctionA which gets passed as an argument to FunctionB. FunctionB will do some work and then call FunctionA at some point in the future.
 
-Callback functions are at the core of asynchronous development. When you perform an asynchronous operation,you’ll provide Node with a callback function. Node will then call the callback when the async operation is complete. This is how you get access to the results of the async operation, whether it’s an HTTP request for JSON data or a query to a database for a user’s profile.The example below shows how you can use the callback pattern in your own code. The geocodefunction is set up to take in two arguments. The first is the address to geocode. The second is the callback function to run when the geocoding process is complete. The example below simulates this request by using `setTimeout` to make the process asynchronous.
+
+A callback function is a function that’s passed as an argument to another function.
+
+Imagine you have FunctionA which gets passed as an argument to FunctionB. FunctionB will do some work and then call FunctionA at some point in the future.
+
+Callback functions are at the core of asynchronous development. When you perform an asynchronous operation,you’ll provide Node with a callback function. Node will then call the callback when the async operation is complete. This is how you get access to the results of the async operation, whether it’s an HTTP request for JSON data or a query to a database for a user’s profile. The example below shows how you can use the callback pattern in your own code. The geocodefunction is set up to take in two arguments. The first is the address to geocode. The second is the callback function to run when the geocoding process is complete. The example below simulates this request by using `setTimeout` to make the process asynchronous.
 
 ```nodejs
 const geocode = (address,callback) => {
@@ -651,3 +667,9 @@ geocode('Philadelphia', (data) => {
 ```
 
 The call to geocode provides both arguments, the address and the callback function. Notice that the callback function is expecting a single parameter which it has called `data`. This is where the callback function will get access to the results of the asynchronous operation. You can see where `callback` is called with the data inside the `geocode` function
+
+#### The `return` Statement
+
+So if our function is completely synchronous like geocode was before we're able to use return to get a value out of the function and back to the part of the code that called that function when our function starts to do something asynchronous though that's no longer an option.
+
+So instead of returning a value we take a call back in and we call the callback with the value we want to send back when we have it. This accomplishes the same goal as the return statement does.

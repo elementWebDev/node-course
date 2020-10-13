@@ -1026,5 +1026,7 @@ const data = [
 * [Testing in ES6 with Mocha and Babel 6](http://jamesknelson.com/testing-in-es6-with-mocha-and-babel-6/)
 
 ## TODO
+
 - [ ] Add javascript date function cheatsheet (see [react-native-travel-app](https://github.com/xiaoyunyang/react-native-travel-app) for the code)
+
 - [ ] Add date functions.

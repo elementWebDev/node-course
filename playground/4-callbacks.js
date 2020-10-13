@@ -2,7 +2,7 @@ setTimeout(() => {
     console.log('Two seconds are up')
 }, 2000)
 
-const names = ['Ivan', 'Sarah', 'Novella']
+const names = ['Ivan', 'Sara', 'Novella']
 const shortNames = names.filter((name) => {
     return name.length <= 4
 })
@@ -22,6 +22,7 @@ const geoCode = (address, callback) => {
 geoCode('Philadelphia', (data) => {
     console.log(data)
 })
+
 //
 // Goal: Mess around with the callback pattern
 //
@@ -45,5 +46,3 @@ const add = (a, b, callback) => {
 add(1, 4, (sum) => {
     console.log(sum)
 })
-
-
