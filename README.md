@@ -673,3 +673,49 @@ The call to geocode provides both arguments, the address and the callback functi
 So if our function is completely synchronous like geocode was before we're able to use return to get a value out of the function and back to the part of the code that called that function when our function starts to do something asynchronous though that's no longer an option.
 
 So instead of returning a value we take a call back in and we call the callback with the value we want to send back when we have it. This accomplishes the same goal as the return statement does.
+
+## 39. ES6 Aside: Object Property Shorthand and Destructuring
+
+```js
+// Object property shorthand
+
+const name = 'Ivan'
+const userAge = 40
+
+const user = {
+    name,   // shorthand - was name: name, if property has same name as variable
+    age: userAge,
+    location: 'La Pine'
+}
+
+console.log(user)
+
+// Object destructuring
+
+const product = {
+    label: 'Red notebook',
+    price: 3,
+    stock: 201,
+    salePrice: undefined,
+    rating: 4.2
+}
+
+// const label = product.label
+// const stock = product.stock
+
+// rename label, provide a default value for rating
+// const {label:productLabel, stock, rating = 5} = product
+// console.log(productLabel) // renamed label
+// console.log(stock)
+// console.log(rating) // undefined - does not crash but stores 'undefined'
+```
+
+If we know that an argument is an object we can always destructure it right in line.
+
+```js
+const transaction = (type, { label, stock }) => {
+    console.log(type, label, stock)
+}
+
+transaction('order', product)
+```
