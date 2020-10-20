@@ -28,6 +28,7 @@ const product = {
 
 // rename label, provide a default value for rating
 // const {label:productLabel, stock, rating = 5} = product
+
 // console.log(productLabel) // renamed label
 // console.log(stock)
 // console.log(rating) // undefined - does not crash but stores 'undefined'

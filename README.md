@@ -643,8 +643,6 @@ A callback function is a function that’s passed as an argument to another func
 
 #### The Callback Function
 
-
-
 A callback function is a function that’s passed as an argument to another function.
 
 Imagine you have FunctionA which gets passed as an argument to FunctionB. FunctionB will do some work and then call FunctionA at some point in the future.
