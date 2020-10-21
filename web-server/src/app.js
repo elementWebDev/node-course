@@ -18,14 +18,6 @@ app.get('/about', (req, res) => {
 app.get('/weather', (req, res) => {
     res.send('Current Weather')
 })
-//
-// Goal: Setup two new routes
-//
-// 1. Setup an about route and render a page title
-// 2. Setup a weather route and render a page title
-// 3. Test your work by visiting both in the browser
-
-
 
 // listen to common development port
 app.listen(3000, () => {
