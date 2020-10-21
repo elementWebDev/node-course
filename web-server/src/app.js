@@ -25,16 +25,14 @@ app.get('/help', (req, res) => {
 // 3. Test work by visiting both in the browser
 
 app.get('/about', (req, res) => {
-    res.send([{
-        name: 'Sara'
-    },
-    {
-        name: 'Ivan'
-    }])
+    res.send('<h1>About</h1>')
 })
 
 app.get('/weather', (req, res) => {
-    res.send('Current Weather')
+    res.send({
+        forecast: 'Partly Cloudy with slight chance of rain.',
+        location: 'Toronto, Canada'
+    })
 })
 
 // listen to common development port
