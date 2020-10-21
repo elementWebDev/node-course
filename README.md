@@ -717,3 +717,32 @@ const transaction = (type, { label, stock }) => {
 
 transaction('order', product)
 ```
+
+## 40. Destructuring and Property Shorthand Challenge
+
+...
+
+### vid@5:04
+
+#### Existing Code
+
+```js
+geocode(address, (error, { latitude, longitude, location }) => {
+```
+
+#### New Code
+
+```javascript
+geocode(address, (error, { latitude, longitude, location } = {}) => {
+```
+
+#### ES6: Default Function Parameters
+
+```javascript
+const greet = (name = 'User') => {
+    console.log('Hello, ' + name + '!')
+}
+
+greet('Ivan') // Will print: Hello, Ivan!
+greet()       // Will print: Hello, User!
+```
