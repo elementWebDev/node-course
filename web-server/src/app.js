@@ -47,6 +47,22 @@ app.get('/weather', (req, res) => {
     })
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: 'Help 404',
+        error: 'Help article not found.',
+        name: 'Ivan Huddleston'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        error: 'Page not found.',
+        name: 'Ivan Huddleston'
+    })
+})
+
 // listen to common development port
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
