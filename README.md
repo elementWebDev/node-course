@@ -746,3 +746,17 @@ const greet = (name = 'User') => {
 greet('Ivan') // Will print: Hello, Ivan!
 greet()       // Will print: Hello, User!
 ```
+
+## 53. Section Intro: Accessing API from Browser
+
+WELCOME TO SECTION NUMBER 8 where you're going to learn how to create your own API endpoints, and you're going to learn how to access them from the browser.
+
+So right now we have these two distinct applications on the back end. We know how to take an address and convert that into a forecast. And on the front end we know how to get our web application up and running in the browser.
+
+The real question is how do we integrate these two together.
+
+What we need is for the browser to be able to communicate with the server passing and address along then the server needs to convert that address into a forecast and pass it back to the browser.
+
+So the browser can actually render forecast data to the screen to get that done.
+
+You're going to learn how to create your own HTTP JSON end points with Express.
