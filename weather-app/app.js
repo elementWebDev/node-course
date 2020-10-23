@@ -6,6 +6,7 @@ const userLocation = process.argv[2]
 if (!userLocation) {
 	console.log("Please provide a location")
 } else {
+
 	geocode(process.argv[2], (error, { latitude, longitude, location }) => {
 		if (error) {
 			return console.log(error)
@@ -18,4 +19,5 @@ if (!userLocation) {
 			console.log(forecastData)
 		})
 	})
+	
 }
